@@ -12,5 +12,13 @@ layout: base.njk
     <div class="love">
         <p>Some other content:  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur suscipit iure illo pariatur facere accusamus assumenda minima et repellendus ea, quasi exercitationem libero ad voluptatum omnis, accusantium est perferendis id?</p>
     </div>
+    <ul>
+    {% for article in news.articles %}
+        <li>
+            <h2><a href="{{ article.url }}" target="_blank">{{ article.title }}</a></h2>
+            <span>{{ article.source.name }} - <time>{{ article.publishedAt }}</time></span>
+        </li>
+    {% endfor %}
+    </ul>
 </div>
 <script src="/js/vibe.js"></script>
